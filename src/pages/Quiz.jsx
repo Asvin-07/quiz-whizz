@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import quizData from "../quizdata";
+import quizData from "../quizData";
 import { saveQuizAttempt } from "../db";
 import { Howl } from 'howler';
 
