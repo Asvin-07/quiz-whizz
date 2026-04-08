@@ -1,118 +1,103 @@
-# 📌 Quiz Whizz
+# Quiz Whizz
 
-Quiz Whizz is an interactive and engaging quiz platform designed to provide a seamless quiz-taking experience. Built with modern web technologies, it offers users an intuitive interface and real-time feedback while answering questions.
+An interactive quiz app built with React where users can test their knowledge, track their scores, and compete against their own history. All data is stored locally in the browser — no backend, no accounts.
 
-## 🚀 Features
+Live demo: [Link](https://quiz-app-beta-flax.vercel.app/)
 
-1️⃣ Core Quiz Functionality
+---
 
-✅ Interactive Quiz System
-- Users can attempt quizzes with multiple-choice and integer-type questions.
-- Questions are displayed one at a time, making it user-friendly.
-- Each question has instant feedback (correct/wrong).
+## Tech Stack
 
-✅ Scoring & Attempt Tracking
-- Users' scores are calculated in real time.
-- Number of correct answers and total questions are displayed at the end.
+- **React 19** — component-based UI
+- **Vite** — build tool and dev server
+- **Tailwind CSS** — styling and dark mode
+- **Framer Motion** — page and element animations
+- **IndexedDB** (via `idb`) — persistent local storage for quiz history
+- **React Router v7** — client-side routing
 
-✅ Timer for Each Question
-- Each question has a 30-second timer.
-- If time runs out, the question is automatically skipped.
+---
 
-✅ Multiple Attempts
-- Users can replay the quiz as many times as they want.
-- Each attempt is stored for later viewing.
+## Features
 
-2️⃣ UI & User Experience (UX) Enhancements
+**Quiz engine**
+- 10 questions per session — 5 multiple choice and 5 integer-type
+- 30-second timer per question; auto-advances if time runs out
+- Instant right/wrong feedback with sound effects on every answer
+- Animated progress bar showing how far through the quiz you are
 
-✅ Light & Dark Mode Toggle 🌙☀️
-- Users can switch between light mode and dark mode.
-- The entire UI updates dynamically, including:
-- Backgrounds
-- Text colors
-- Tables
-- Buttons
+**Scoreboard**
+- All attempts are saved locally using IndexedDB, so they persist across page refreshes
+- Attempts are ranked by score, with medals shown for the top 3
+- One-click reset to clear the full history
 
-✅ Playful UI Animations and Sound 🎭
-- Smooth fade-in animations for question transitions.
-- Hover effects on buttons to improve usability.
-- Two different sound for correct and incorrect answers.
+**UI**
+- Dark and light mode toggle, with preference saved between sessions
+- Smooth transitions between questions using Framer Motion
+- Fully responsive — works on mobile, tablet, and desktop
 
-✅ Mobile-Friendly & Responsive 📱
-- Fully responsive across all devices (mobiles, tablets, desktops).
-- Uses Tailwind CSS for a clean, modern design.
+---
 
-✅ Navigation Between Screens
-- Users can navigate between Home, Quiz, and Scoreboard seamlessly using React Router.
+## Project Structure
 
-3️⃣ Scoreboard & Quiz History
+```
+quiz-whizz/
+├── public/
+│   └── sounds/
+│       ├── correct.mp3
+│       └── incorrect.mp3
+├── src/
+│   ├── assets/
+│   │   └── react.svg
+│   ├── components/
+│   │   └── ThemeToggle.jsx     # Dark/Light mode toggle component
+│   ├── pages/
+│   │   ├── Home.jsx            # Landing page with navigation
+│   │   ├── Quiz.jsx            # Core quiz engine (timer, scoring, feedback)
+│   │   └── Scoreboard.jsx      # Quiz history and leaderboard
+│   ├── App.jsx                 # Root component, routing and global theme state
+│   ├── App.css
+│   ├── index.css
+│   ├── main.jsx                # React DOM entry point
+│   ├── db.js                   # IndexedDB abstraction (save, get, clear history)
+│   └── quizData.js             # Static question bank
+├── index.html
+├── vite.config.js
+├── eslint.config.js
+└── package.json
+```
 
-✅ Scoreboard Feature 🏆
-- Shows a ranked list of quiz attempts, sorted by highest score first.
-- Displays score, total questions, and timestamp of each attempt.
-- Top 3 players get 🥇🥈🥉 icons for rankings.
+---
 
-✅ Persistent Quiz History (IndexedDB) 🗂️
-- All quiz attempts are saved locally using IndexedDB.
-- Even after refreshing or closing the browser, users can still see their past attempts.
+## Running Locally
 
-✅ Reset Scoreboard Button 🔄
-- Users can reset their quiz history by clicking "Reset Score".
-- This removes all saved attempts from IndexedDB
+Make sure you have [Node.js](https://nodejs.org/) (LTS) and [Git](https://git-scm.com/) installed.
 
-### ⚡ Fast and Optimized Performance
-- Built with Vite for lightning-fast development and production builds.
-- Minimal loading time for a seamless user experience.
-
-## 🛠️ Running the App Locally
-
-To set up and run the Quiz Whizz application locally, follow these steps:
-
-### 1️⃣ Prerequisites
-Make sure you have the following installed:
-- [Node.js](https://nodejs.org/) (LTS recommended)
-- [Git](https://git-scm.com/)
-
-### 2️⃣ Clone the Repository
 ```sh
 git clone https://github.com/Asvin-07/quiz-whizz.git
 cd quiz-whizz
-```
-
-### 3️⃣ Install Dependencies
-```sh
 npm install
-```
-
-### 4️⃣ Start the Development Server
-```sh
 npm run dev
 ```
 
-### 5️⃣ Open the App
-- Open your browser and visit `http://localhost:5173` to start using the quiz app.
+Then open [http://localhost:5173](http://localhost:5173) in your browser.
 
-## 🚀 Deployment
+---
 
-The app is deployed on a hosting platform to make it accessible to users globally.
+## Contributing
 
-### 🌍 Live Demo
-[Live Demo](https://quiz-app-beta-flax.vercel.app/)
+1. Fork the repository
+2. Create a branch (`git checkout -b your-feature`)
+3. Commit your changes (`git commit -m "your message"`)
+4. Push and open a Pull Request
 
+For bugs or feature requests, open an issue on the [Issues page](https://github.com/Asvin-07/quiz-whizz/issues).
 
-## 🤝 Contributing
-We welcome contributions! If you’d like to contribute:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes and commit them (`git commit -m "Added new feature"`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a Pull Request.
+---
 
-## 📜 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## License
 
-## 📞 Contact
-For any inquiries or issues, feel free to reach out:
-- GitHub Issues: [Issues Page](https://github.com/Asvin-07/quiz-whizz/issues)
-- Email: rishabnigam02@gmail.com
+MIT — see [LICENSE](LICENSE) for details.
 
+## Contact
+
+rishabnigam02@gmail.com
