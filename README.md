@@ -99,15 +99,6 @@ The app is deployed on a hosting platform to make it accessible to users globall
 ### 🌍 Live Demo
 [Live Demo](https://quiz-app-beta-flax.vercel.app/)
 
-### 🏗️ Deployment Instructions
-You can deploy the app using platforms like:
-- **Vercel** ([Guide](https://vercel.com/))
-- **Netlify** ([Guide](https://www.netlify.com/))
-
-Steps to deploy:
-1. **Push your code to GitHub**
-2. **Connect your GitHub repository to Vercel/Netlify**
-3. **Deploy the app with a single click**
 
 ## 🤝 Contributing
 We welcome contributions! If you’d like to contribute:
